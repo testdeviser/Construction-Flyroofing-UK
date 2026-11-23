@@ -541,6 +541,8 @@ h1 {
 }
 
 .project-section {
+  width: 92%;
+  margin-inline: auto;
   padding-block: clamp(2rem, 3.55vw, 4.25rem);
   background: #fff;
   scroll-margin-top: 1rem;
