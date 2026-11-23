@@ -183,7 +183,6 @@ p, h1, h2 { margin: 0; }
 .hero-panel {
   width: min(62%, 48rem);
   padding: clamp(1.65rem, 2.8vw, 2.8rem);
-  border: 1px solid rgb(255 255 255 / 27%);
   border-radius: var(--radius);
   background: linear-gradient(122deg, rgb(239 247 255 / 48%), rgb(255 255 255 / 19%) 73%, rgb(255 255 255 / 0%));
 }
