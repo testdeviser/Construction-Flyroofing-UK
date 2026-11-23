@@ -472,7 +472,7 @@ h1 {
   .site-nav { gap: .8rem; font-size: .875rem; }
   .hero-panel { width: 67%; }
   .logo-slider { gap: .4rem; padding-inline: .75rem; }
-  .logo-label { max-width: 4rem; }
+  .logo-label { max-width: 7rem; }
 }
 
 @media (max-width: 43rem) {
