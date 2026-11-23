@@ -22,11 +22,11 @@
         <span role="link" aria-disabled="true">About Us</span>
         <button type="button" popovertarget="services-menu">Our Services</button>
         <span role="link" aria-disabled="true">Blog</span>
-        <span role="link" aria-disabled="true">Contact Us</span>
+        <a href="#project-enquiry">Contact Us</a>
       </nav>
-      <button class="pill-button header-button" type="button" popovertarget="services-menu">
+      <a class="pill-button header-button" href="#project-enquiry">
         Plan your project <span class="button-icon" aria-hidden="true"></span>
-      </button>
+      </a>
     </header>
 
     <main id="main">
@@ -66,6 +66,59 @@
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="project-section" id="project-enquiry" aria-label="Project management and enquiries" tabindex="-1">
+        <div class="project-grid shell">
+          <article class="management-card" aria-labelledby="management-title">
+            <div class="management-photo">
+              <img src="project-manager.webp" alt="" width="720" height="720" loading="lazy" decoding="async">
+            </div>
+            <div class="management-copy">
+              <h2 id="management-title">Project Management</h2>
+              <p>We coordinate roofing and building work from the first site visit through to completion.</p>
+              <h3>How we work</h3>
+              <ul>
+                <li>Site planning and coordination</li>
+                <li>Quality checks at each stage</li>
+              </ul>
+            </div>
+          </article>
+
+          <div class="enquiry-card">
+            <h2 id="enquiry-title">Have a Project in Mind?</h2>
+            <form class="enquiry-form" action="mailto:?subject=Project%20enquiry" method="post" enctype="text/plain" aria-labelledby="enquiry-title" aria-describedby="enquiry-note">
+              <label class="enquiry-field">
+                <span class="enquiry-label">Your name</span>
+                <input type="text" name="Name" autocomplete="name" placeholder="Your Name*" required>
+              </label>
+              <label class="enquiry-field">
+                <span class="enquiry-label">Email address</span>
+                <input type="email" name="Email" autocomplete="email" placeholder="Email Address*" required>
+              </label>
+              <label class="enquiry-field enquiry-service">
+                <span class="enquiry-label">Service</span>
+                <select name="Service" required>
+                  <option value="" disabled selected>Your Services*</option>
+                  <option value="Pitched roofing">Pitched roofing</option>
+                  <option value="Flat roofing">Flat roofing</option>
+                  <option value="Construction">Construction</option>
+                  <option value="Property improvements">Property improvements</option>
+                </select>
+              </label>
+              <button class="enquiry-submit" type="submit">Open Email Draft</button>
+              <p class="enquiry-note" id="enquiry-note">Opens a draft in your email app for you to address and send.</p>
+            </form>
+          </div>
+
+          <figure class="site-team">
+            <img src="project-site-team.webp" alt="Construction workers in hard hats reviewing drawings on site" width="720" height="720" loading="lazy" decoding="async">
+            <figcaption class="site-team-caption">
+              <strong>Plan first.</strong>
+              <span>From drawings to site work</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

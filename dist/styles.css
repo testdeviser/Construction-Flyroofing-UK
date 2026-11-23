@@ -539,3 +539,245 @@ h1 {
     padding-inline: .8rem .5rem;
   }
 }
+
+.project-section {
+  padding-block: clamp(2rem, 3.55vw, 4.25rem);
+  background: #fff;
+  scroll-margin-top: 1rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, 1.29fr) minmax(0, 1fr);
+  gap: clamp(1rem, 1.6vw, 1.75rem);
+}
+
+.management-card,
+.enquiry-card,
+.site-team {
+  min-width: 0;
+  border-radius: .4rem;
+}
+
+.management-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(.85rem, 1.4vw, 1.45rem);
+  padding: clamp(.75rem, .9vw, 1rem);
+  background: #303030;
+  color: #fff;
+}
+
+.management-photo,
+.site-team {
+  position: relative;
+  overflow: hidden;
+  background: #514238;
+}
+
+.management-photo { border-radius: .3rem; }
+
+.management-photo img,
+.site-team img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.management-photo img { object-position: 44% center; }
+
+.management-copy {
+  align-self: center;
+  padding: .6rem .25rem .6rem 0;
+}
+
+.project-grid h2 {
+  font-size: clamp(1.2rem, 1.5vw, 1.55rem);
+  line-height: 1.2;
+  letter-spacing: -.045em;
+}
+
+.management-copy p {
+  margin-top: .8rem;
+  color: #f4f4f4;
+  font-size: .95rem;
+  line-height: 1.48;
+}
+
+.management-copy h3 {
+  margin: 1.15rem 0 .65rem;
+  font-size: .95rem;
+  line-height: 1.3;
+}
+
+.management-copy ul {
+  display: grid;
+  gap: .65rem;
+  margin: 0;
+  padding: .85rem 0 0;
+  border-top: 1px solid #545454;
+  list-style: none;
+}
+
+.management-copy li {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  align-items: start;
+  gap: .55rem;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.management-copy li::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #717171;
+  border-radius: 50%;
+  background: linear-gradient(48deg, transparent 41%, #fff 43% 58%, transparent 60%) 28% 57% / .34rem .38rem no-repeat,
+    linear-gradient(-53deg, transparent 41%, #fff 43% 58%, transparent 60%) 65% 48% / .54rem .64rem no-repeat;
+}
+
+.enquiry-card {
+  align-content: center;
+  padding: clamp(1.15rem, 2vw, 2.2rem);
+  border: 1px solid #dddfe4;
+  background: #f5f5f5;
+}
+
+.enquiry-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem clamp(.75rem, 1.3vw, 1.5rem);
+  margin-top: clamp(1rem, 1.5vw, 1.55rem);
+}
+
+.enquiry-field {
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+
+.enquiry-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.enquiry-field :is(input, select) {
+  display: block;
+  width: 100%;
+  min-height: 3.05rem;
+  padding: .7rem 1rem;
+  border: 1px solid #dcdde2;
+  border-radius: 2rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: .875rem;
+}
+
+.enquiry-field input::placeholder { color: #414348; }
+
+.enquiry-field :is(input, select):focus-visible {
+  outline: 2px solid #263cb4;
+  outline-offset: 2px;
+}
+
+.enquiry-service,
+.enquiry-submit,
+.enquiry-note { grid-column: 1 / -1; }
+
+.enquiry-service select {
+  appearance: none;
+  padding-right: 2.45rem;
+}
+
+.enquiry-service::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: .62rem;
+  height: .62rem;
+  background: #9a6804;
+  clip-path: polygon(0 21%, 100% 21%, 50% 82%);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.enquiry-submit {
+  min-height: 3.15rem;
+  padding: .7rem 1rem;
+  border: 0;
+  border-radius: 2rem;
+  background: #303030;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.enquiry-submit:hover { background: #474747; }
+
+.enquiry-note {
+  margin-top: -.25rem;
+  color: #4e5158;
+  font-size: .875rem;
+  line-height: 1.35;
+}
+
+.site-team {
+  min-height: 19rem;
+  margin: 0;
+}
+
+.site-team img { object-position: center 37%; }
+
+.site-team-caption {
+  position: absolute;
+  inset: auto 0 0 auto;
+  display: grid;
+  gap: .5rem;
+  width: max(51%, 10rem);
+  padding: clamp(.9rem, 1.6vw, 1.8rem);
+  border-radius: .4rem 0 0 0;
+  background: linear-gradient(140deg, rgb(150 83 55 / 94%), rgb(57 49 49 / 95%));
+  color: #fff;
+  backdrop-filter: blur(16px);
+}
+
+.site-team-caption strong {
+  font-size: clamp(1.9rem, 3.3vw, 3.65rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.07em;
+}
+
+.site-team-caption span {
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 68rem) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-team { grid-column: 1 / -1; min-height: clamp(17rem, 42vw, 25rem); }
+  .site-team img { object-position: center 38%; }
+  .site-team-caption { width: min(43%, 16rem); }
+}
+
+@media (max-width: 45rem) {
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+  .management-card { min-height: 16rem; }
+  .site-team { grid-column: auto; }
+}
+
+@media (max-width: 25rem) {
+  .enquiry-form { grid-template-columns: minmax(0, 1fr); }
+}
