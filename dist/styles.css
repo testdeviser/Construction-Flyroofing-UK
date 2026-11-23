@@ -783,3 +783,213 @@ h1 {
 @media (max-width: 25rem) {
   .enquiry-form { grid-template-columns: minmax(0, 1fr); }
 }
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.68fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5.7vw, 5rem);
+  width: min(94%, 92rem);
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 5.1vw, 5rem);
+  scroll-margin-top: 1rem;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  padding: .4rem .9rem;
+  border: 1px solid #cbced0;
+  border-radius: 2rem;
+  color: #292b2d;
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.about-copy h2 {
+  max-width: 19ch;
+  margin-top: 1.15rem;
+  font-size: clamp(2.45rem, 4.1vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -.048em;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.82fr);
+  gap: clamp(1.5rem, 5vw, 4.4rem);
+  margin-top: clamp(2.1rem, 4.2vw, 4.1rem);
+}
+
+.about-tour,
+.about-photo {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: #393f46;
+}
+
+.about-tour {
+  display: grid;
+  place-items: center;
+  min-height: clamp(16rem, 23.75vw, 23rem);
+  padding: 0;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.about-tour img,
+.about-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-tour img { object-position: center 46%; }
+
+.about-tour::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background: rgb(18 26 36 / 57%);
+}
+
+.about-play {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(3.6rem, 7.4vw, 6.5rem);
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 12%);
+  box-shadow: 0 0 0 .75rem rgb(255 255 255 / 10%);
+}
+
+.about-tour:hover .about-play { background: rgb(255 255 255 / 27%); }
+
+.about-play::before {
+  content: "";
+  width: 1rem;
+  height: 1.2rem;
+  margin-left: .15rem;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.about-photo {
+  margin-top: clamp(3rem, 4.15vw, 4.25rem);
+}
+
+.about-photo img { object-position: center 45%; }
+
+.about-features {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-feature {
+  display: grid;
+  grid-template-columns: clamp(2rem, 4.3vw, 3.75rem) minmax(0, 1fr);
+  gap: clamp(.8rem, 1.75vw, 1.6rem);
+  width: 100%;
+}
+
+.about-feature + .about-feature {
+  margin-block: 1.6rem 2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid #e0e1e4;
+}
+
+.about-feature-icon {
+  width: 100%;
+  height: auto;
+  color: #252629;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-feature h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.75vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+.about-feature p {
+  margin-top: .65rem;
+  color: #55595e;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 1.5;
+}
+
+.about-more {
+  margin-top: auto;
+  padding: .5rem .5rem .5rem 1.65rem;
+  background: #ffbf40;
+  color: #221b10;
+  text-transform: uppercase;
+}
+
+.about-more:hover { background: #ffcd63; }
+
+.about-more .button-icon {
+  width: 2.65rem;
+  height: 2.65rem;
+  background: rgb(47 31 7 / 9%);
+}
+
+.about-media { width: min(calc(100% - 2rem), 40rem); }
+
+.about-media video {
+  display: block;
+  width: 100%;
+  height: min(54dvh, 30rem);
+  margin-top: 1rem;
+  border-radius: .5rem;
+  background: #1c1e22;
+}
+
+.about-media p {
+  margin-top: .8rem;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 62rem) {
+  .about-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .6fr);
+    gap: 1.5rem;
+  }
+
+  .about-details { gap: 1.25rem; }
+}
+
+@media (max-width: 49rem) {
+  .about-section {
+    grid-template-columns: minmax(0, 1fr);
+    width: calc(100% - 2rem);
+  }
+
+  .about-photo {
+    min-height: clamp(19rem, 72vw, 28rem);
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  .about-details { grid-template-columns: minmax(0, 1fr); }
+  .about-tour { min-height: 14rem; }
+  .about-tour img { object-position: center 57%; }
+}
