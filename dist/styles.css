@@ -226,7 +226,7 @@ p, h1, h2 { margin: 0; }
 }
 
 h1 {
-  font-size: min(clamp(2.4rem, 4.2vw, 4.3rem), 10cqi);
+  font-size: min(clamp(2.4rem, 5.1vw, 82px), 12.5cqi);
   font-weight: 600;
   line-height: 1.06;
   letter-spacing: -.057em;
@@ -234,7 +234,7 @@ h1 {
 }
 
 .intro {
-  max-width: 26rem;
+  max-width: 82%;
   margin-block: 1rem 1.65rem;
   color: var(--muted);
   font-size: clamp(1rem, 1.55vw, 1.22rem);
