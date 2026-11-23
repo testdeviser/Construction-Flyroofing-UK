@@ -192,8 +192,7 @@ p, h1, h2 { margin: 0; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(var(--image-height) - var(--header-height) + 4rem);
-  padding-bottom: 4rem;
+  min-height: calc(var(--image-height) - var(--header-height));
 }
 
 .hero-panel {
@@ -243,7 +242,7 @@ h1 {
 
 .roof-annotation {
   position: absolute;
-  top: 48%;
+  top: calc(48% + 1.92rem);
   left: 64%;
   pointer-events: none;
 }
@@ -300,9 +299,10 @@ h1 {
 }
 
 .logo-label {
-  color: var(--muted);
-  font-size: .875rem;
-  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .logo-window {
@@ -508,7 +508,7 @@ h1 {
 
   .hero {
     min-height: auto;
-    padding-block: 1rem 1.75rem;
+    padding-top: 1rem;
   }
 
   .hero-panel {
