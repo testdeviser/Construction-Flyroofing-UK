@@ -40,7 +40,7 @@
         <nav class="site-nav" aria-label="Main navigation">
           <a href="#home" aria-current="page">Home</a>
           <a href="#about">About Us</a>
-          <button type="button" popovertarget="services-menu">Our Services<span class="nav-chevron" aria-hidden="true"></span></button>
+          <a href="#services">Our Services</a>
           <a href="#blog">Blog</a>
           <a href="#project-enquiry">Contact Us</a>
         </nav>
@@ -59,9 +59,9 @@
           <p class="eyebrow">UK roofing &amp; construction</p>
           <h1 id="hero-title">UK Roofing,<br> Construction &amp; <br> Property Services</h1>
           <p class="intro">From roof repairs and replacements to home extensions, find the right service for your home.</p>
-          <button class="pill-button" type="button" popovertarget="services-menu">
+          <a class="pill-button" href="#services">
             Explore our services <span class="button-icon" aria-hidden="true"></span>
-          </button>
+          </a>
         </div>
         <div class="roof-annotation">
           <span class="roof-point" aria-hidden="true"></span>
@@ -181,9 +181,9 @@
                 </div>
               </div>
 
-              <button class="pill-button about-more" type="button" popovertarget="services-menu" aria-label="Discover more about our services">
+              <a class="pill-button about-more" href="#services" aria-label="Discover more about our services">
                 Discover More <span class="button-icon" aria-hidden="true"></span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -210,6 +210,84 @@
         </div>
       </div>
 
+      <section class="services-section" id="services" aria-labelledby="services-title" tabindex="-1">
+        <div class="services-intro">
+          <p class="services-kicker">Our Services</p>
+          <h2 id="services-title">Complete Property Services Under One Roof</h2>
+          <p class="services-summary">From roofing and construction to renovations and repairs, explore services that help protect, maintain and improve your property.</p>
+        </div>
+
+        <div class="service-stack">
+          <article class="service-card" aria-labelledby="service-construction">
+            <div class="service-card-content">
+              <span class="service-card-number" aria-hidden="true">01</span>
+              <h3 id="service-construction">Core Construction</h3>
+              <div class="service-card-detail">
+                <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M4 43h26M13 43V15m8 28V15M4 15l12-10 30 10H4Zm39 0v18a3 3 0 1 1-6 0M13 20l8 8-8 8 7 7"/></svg>
+                <p>Extensions, alterations and general building work for homes and businesses. We coordinate the build from the first site visit to the finishing touches.</p>
+                <a class="pill-button service-card-link" href="#project-enquiry" aria-label="Enquire about core construction">
+                  Enquire Now <span class="button-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+            <div class="service-card-media">
+              <img src="service-construction.webp" alt="Three construction workers reviewing a large plan on site" width="800" height="535" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="service-card" aria-labelledby="service-pitched-roofing">
+            <div class="service-card-content">
+              <span class="service-card-number" aria-hidden="true">02</span>
+              <h3 id="service-pitched-roofing">Pitched Roofing</h3>
+              <div class="service-card-detail">
+                <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M4 25 24 7l20 18M10 24v16h28V24M14 25h20m-17-5h14m-12-5h10M18 40V29h12v11"/></svg>
+                <p>Slate and tile roofing for new roofs, replacements and repairs. We assess the roof and recommend work suited to the property and its condition.</p>
+                <a class="pill-button service-card-link" href="#project-enquiry" aria-label="Enquire about pitched roofing">
+                  Enquire Now <span class="button-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+            <div class="service-card-media">
+              <img src="service-pitched-roofing.webp" alt="Roofer fitting slate tiles on a pitched roof" width="800" height="535" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="service-card" aria-labelledby="service-flat-roofing">
+            <div class="service-card-content">
+              <span class="service-card-number" aria-hidden="true">03</span>
+              <h3 id="service-flat-roofing">Flat Roofing</h3>
+              <div class="service-card-detail">
+                <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M5 13h38v8H5zM9 25v15h30V25M15 40V28h18v12M5 17h38"/></svg>
+                <p>Flat roof installations, replacements and repairs for extensions, garages and other low-slope roofs, with attention to drainage and weatherproofing.</p>
+                <a class="pill-button service-card-link" href="#project-enquiry" aria-label="Enquire about flat roofing">
+                  Enquire Now <span class="button-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+            <div class="service-card-media">
+              <img src="service-flat-roofing.webp" alt="Roofers working on a flat roof membrane" width="800" height="535" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="service-card" aria-labelledby="service-property-improvements">
+            <div class="service-card-content">
+              <span class="service-card-number" aria-hidden="true">04</span>
+              <h3 id="service-property-improvements">Property Improvements</h3>
+              <div class="service-card-detail">
+                <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M4 24 24 7l20 17M10 24v17h28V24M19 41V28h10v13m9-27V8h5v11M14 22h20"/></svg>
+                <p>Renovations and upgrades that make better use of your space. We can help plan improvements to rooms, finishes and the exterior of your property.</p>
+                <a class="pill-button service-card-link" href="#project-enquiry" aria-label="Enquire about property improvements">
+                  Enquire Now <span class="button-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+            <div class="service-card-media">
+              <img src="service-property-improvements.webp" alt="Completed brick home extension beside a garden" width="800" height="535" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </div>
+      </section>
+
       <div class="services-menu about-media" id="about-tour-player" popover role="dialog" aria-labelledby="about-tour-title">
         <div class="services-menu-header">
           <h2 id="about-tour-title">Site Planning Photo Tour</h2>
@@ -220,21 +298,6 @@
           <a href="about-site-tour.mp4">Open the photo tour video</a>
         </video>
         <p id="about-tour-description">A silent photo tour showing a team reviewing drawings and surveyors checking measurements on site.</p>
-      </div>
-
-      <div class="services-menu" id="services-menu" popover role="dialog" aria-labelledby="services-title">
-        <div class="services-menu-header">
-          <h2 id="services-title">Our Services</h2>
-          <button class="services-close" type="button" popovertarget="services-menu" popovertargetaction="hide" autofocus>Close</button>
-        </div>
-        <dl class="service-list">
-          <dt>Pitched roofing</dt>
-          <dd>New roofs, repairs and replacements</dd>
-          <dt>Flat roofing</dt>
-          <dd>Installations and repairs</dd>
-          <dt>Construction</dt>
-          <dd>Extensions and renovations</dd>
-        </dl>
       </div>
     </main>
   </div>
