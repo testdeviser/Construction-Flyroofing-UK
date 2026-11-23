@@ -46,7 +46,11 @@ p, h1, h2 { margin: 0; }
 .opening {
   --image-height: clamp(38rem, 60.25vw, 54rem);
   --header-height: clamp(4rem, 6.2vw, 5.65rem);
+  --project-width: clamp(16.5rem, 28vw, 23rem);
+  --hero-gap: clamp(1.25rem, 2.8vw, 2.6rem);
+  --shell-gutter: max(5cqw, calc((100cqw - 92rem) / 2));
   position: relative;
+  container-type: inline-size;
   isolation: isolate;
 }
 
@@ -147,23 +151,26 @@ p, h1, h2 { margin: 0; }
   background: var(--blue);
 }
 
-.button-icon::before {
-  content: "";
-  width: .55rem;
-  height: .55rem;
-  border-top: 1.5px solid currentColor;
-  border-left: 1.5px solid currentColor;
-  transform: translateY(.15rem) rotate(45deg);
-}
-
+.button-icon::before,
 .button-icon::after {
   content: "";
   position: absolute;
-  width: .6rem;
+}
+
+.button-icon::before {
+  width: .48rem;
+  height: .48rem;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: translate(.14rem, -.14rem);
+}
+
+.button-icon::after {
+  width: .72rem;
   height: 1.5px;
-  bottom: 29%;
   border-radius: 1px;
   background: currentColor;
+  transform: rotate(-45deg);
 }
 
 .header-button .button-icon {
@@ -275,7 +282,7 @@ h1 {
 .image-note {
   position: absolute;
   right: 0;
-  bottom: 10.5rem;
+  top: calc(var(--image-height) - var(--header-height) - 7.4rem);
   padding: .34rem .68rem;
   border: 1px solid rgb(255 255 255 / 35%);
   border-radius: 99rem;
@@ -285,28 +292,30 @@ h1 {
 }
 
 .hero-bottom {
-  display: grid;
-  grid-template-columns: clamp(15.5rem, 28vw, 23rem) minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(1rem, 2.8vw, 2.6rem);
   margin-top: clamp(1.75rem, 5vw, 4rem);
   padding-bottom: .5rem;
 }
 
 .project-card {
+  width: var(--project-width);
   min-width: 0;
-  padding: clamp(1.05rem, 2.2vw, 1.75rem);
-  border: 1px solid rgb(255 255 255 / 64%);
+  padding: clamp(1rem, 1.9vw, 1.55rem);
+  border: 1px solid #fff;
   border-radius: var(--radius);
   background: #fff;
-  box-shadow: 0 .6rem 2rem rgb(25 40 68 / 7%);
+  box-shadow: 0 .75rem 2.5rem rgb(25 40 68 / 12%);
   scroll-margin-block: 1rem;
 }
 
-.project-card h2 { font-size: 1.12rem; font-weight: 700; }
+.project-card h2 {
+  font-size: clamp(1.15rem, 1.65vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
 
 .project-card p {
-  margin-top: .26rem;
+  margin-top: .28rem;
   color: var(--muted);
   font-size: .875rem;
   line-height: 1.35;
@@ -315,36 +324,181 @@ h1 {
 .project-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .5rem;
-  margin-top: .85rem;
+  gap: .45rem;
+  margin-top: .9rem;
 }
 
 .project-links a {
+  display: grid;
+  grid-template-rows: auto 1fr;
   min-width: 0;
+  padding: .24rem;
+  border: 1px solid #e5e9f3;
+  border-radius: .8rem;
+  background: #f5f7fc;
   color: #252a3a;
   font-size: .875rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
   text-decoration: none;
-  text-underline-offset: .2em;
 }
 
-.project-links a:hover { text-decoration: underline; }
+.project-links a:hover {
+  border-color: var(--blue);
+  background: #eef1ff;
+  color: #263cb4;
+}
+
+.project-links a span {
+  display: grid;
+  place-items: center;
+  min-height: 2.6rem;
+  padding: .25rem .08rem;
+  overflow-wrap: anywhere;
+}
 
 .project-links img {
   display: block;
   width: 100%;
-  height: clamp(2.75rem, 4.4vw, 4rem);
-  margin-bottom: .42rem;
-  border-radius: .65rem;
+  height: clamp(3.25rem, 4.8vw, 4.5rem);
+  border-radius: .55rem;
   object-fit: cover;
+}
+
+.logo-slider {
+  position: absolute;
+  top: calc(var(--image-height) - var(--header-height));
+  left: calc(var(--project-width) + var(--hero-gap));
+  right: calc(-1 * var(--shell-gutter));
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .7rem;
+  min-height: 4.4rem;
+  padding: .65rem max(1rem, 3vw) .65rem 1.25rem;
+  border-radius: var(--radius) 0 0 0;
+  background: #fff;
+  transform: translateY(-100%);
+}
+
+.logo-label {
+  color: var(--muted);
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.logo-window {
+  grid-area: 1 / 2;
+  container-type: inline-size;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: slide-logos 27s linear infinite;
+}
+
+.logo-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100cqw;
+  gap: clamp(1.35rem, 3.1vw, 3.15rem);
+  margin: 0;
+  padding: 0 clamp(1.35rem, 3.1vw, 3.15rem) 0 0;
+  list-style: none;
+}
+
+.logo-group li {
+  display: inline-flex;
+  align-items: center;
+  gap: .46rem;
+  color: #515b69;
+  font-size: clamp(.95rem, 1.45vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  white-space: nowrap;
+}
+
+.logo-symbol {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  background: currentColor;
+}
+
+.logo-symbol--stack { clip-path: polygon(0 16%, 72% 16%, 100% 34%, 28% 34%, 0 16%, 0 48%, 72% 48%, 100% 66%, 28% 66%, 0 48%, 0 80%, 72% 80%, 100% 98%, 28% 98%, 0 80%); }
+.logo-symbol--peak { clip-path: polygon(50% 4%, 100% 91%, 76% 91%, 50% 45%, 24% 91%, 0 91%); }
+.logo-symbol--grid { background: radial-gradient(circle at 25% 25%, currentColor 20%, transparent 23%), radial-gradient(circle at 75% 25%, currentColor 20%, transparent 23%), radial-gradient(circle at 25% 75%, currentColor 20%, transparent 23%), radial-gradient(circle at 75% 75%, currentColor 20%, transparent 23%); }
+.logo-symbol--ring { border: .22rem solid currentColor; border-radius: 50%; background: transparent; }
+.logo-symbol--spire { clip-path: polygon(16% 100%, 43% 0, 61% 0, 34% 100%, 51% 100%, 78% 22%, 94% 22%, 69% 100%); }
+
+.logo-pause {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+}
+
+.logo-toggle {
+  grid-area: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid #e5e9f3;
+  border-radius: 50%;
+  color: #43516a;
+  cursor: pointer;
+}
+
+.logo-toggle:hover { background: #eef1ff; }
+
+.logo-toggle span {
+  width: .65rem;
+  height: .7rem;
+  border-inline: .16rem solid currentColor;
+}
+
+.logo-pause:checked + .logo-toggle span {
+  border: 0;
+  background: currentColor;
+  clip-path: polygon(12% 0, 100% 50%, 12% 100%);
+}
+
+.logo-pause:focus-visible + .logo-toggle {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.logo-pause:checked ~ .logo-window .logo-track,
+.logo-window:hover .logo-track {
+  animation-play-state: paused;
+}
+
+@keyframes slide-logos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-pause,
+  .logo-toggle,
+  .logo-group--repeat { display: none; }
+
+  .logo-window { mask-image: none; }
+  .logo-track { width: auto; animation: none; }
+  .logo-group { flex: 0 1 auto; flex-wrap: wrap; gap: .5rem 1.4rem; padding-right: 0; }
 }
 
 .services {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-self: start;
-  margin-top: clamp(2.7rem, 5vw, 4.5rem);
+  margin-block: 1rem 2.5rem;
   padding: .6rem;
   border: 1px solid #fff;
   border-radius: var(--radius);
@@ -395,6 +549,8 @@ h1 {
   .opening { --image-height: 38rem; }
   .site-header { gap: 1rem; }
   .hero-panel { width: 67%; }
+  .logo-slider { gap: .4rem; padding-inline: .75rem; }
+  .logo-label { max-width: 4rem; }
   .service { flex-direction: column; align-items: flex-start; }
 }
 
@@ -454,18 +610,20 @@ h1 {
     margin-top: 14.5rem;
   }
 
-  .hero-bottom {
-    grid-template-columns: 1fr;
-    gap: .85rem;
-    margin-top: 1rem;
-  }
+  .hero-bottom { margin-top: 1rem; }
 
+  .project-card { width: 100%; }
   .project-links img { height: 4.2rem; }
 
-  .services {
-    grid-template-columns: 1fr;
-    margin-top: 0;
+  .logo-slider {
+    position: static;
+    min-height: 3.8rem;
+    margin-top: .85rem;
+    border-radius: var(--radius);
+    transform: none;
   }
+
+  .services { grid-template-columns: 1fr; }
 
   .service {
     flex-direction: row;

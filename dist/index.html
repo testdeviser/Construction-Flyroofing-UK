@@ -13,9 +13,9 @@
   <div class="opening" id="home">
     <img class="backdrop" src="standing-seam-home.webp" alt="" fetchpriority="high">
     <header class="site-header shell">
-      <a class="brand" href="#home">
+      <a class="brand" href="#home" aria-label="Home">
         <img src="mark.svg" alt="" width="34" height="34">
-        Ridge &amp; Acre
+        Your Logo
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#home" aria-current="page">Home</a>
@@ -47,31 +47,55 @@
 
         <div class="hero-bottom">
           <section class="project-card" id="project" aria-labelledby="project-title" tabindex="-1">
-            <h2 id="project-title">What are you planning?</h2>
-            <p>Choose a service for your home.</p>
+            <h2 id="project-title">Find your project type</h2>
+            <p>Select a service to see what it covers.</p>
             <div class="project-links">
-              <a href="#roofing"><img src="pitched-roofing.webp" alt="" width="76" height="64">Pitched roofing</a>
-              <a href="#flat-roofing"><img src="flat-roofing.webp" alt="" width="76" height="64">Flat roofing</a>
-              <a href="#construction"><img src="construction.webp" alt="" width="76" height="64">Construction</a>
+              <a href="#roofing"><img src="pitched-roofing.webp" alt="" width="76" height="64"><span>Pitched roofing</span></a>
+              <a href="#flat-roofing"><img src="flat-roofing.webp" alt="" width="76" height="64"><span>Flat roofing</span></a>
+              <a href="#construction"><img src="construction.webp" alt="" width="76" height="64"><span>Construction</span></a>
             </div>
           </section>
 
-          <div class="services" id="services" role="region" aria-label="Services overview" tabindex="-1">
-            <article class="service" id="roofing" tabindex="-1">
-              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="m3 17 13-10 13 10M7 17l9-7 9 7M8 19v6h16v-6M22 11V7h4v7"/></svg>
-              <div><h2>Pitched roofing</h2><p>New roofs, repairs and replacements</p></div>
-            </article>
-            <article class="service" id="flat-roofing" tabindex="-1">
-              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M4 10h24v5H4zM7 19v6h18v-6M13 25v-6h6v6"/></svg>
-              <div><h2>Flat roofing</h2><p>Installations and repairs</p></div>
-            </article>
-            <article class="service" id="construction" tabindex="-1">
-              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M5 25V11l10-5 10 5v14H5Zm20 0h4V16h-4M11 25v-8h8v8M13 12h4"/></svg>
-              <div><h2>Construction</h2><p>Extensions and renovations</p></div>
-            </article>
+          <div class="logo-slider" role="region" aria-label="Sample logo slider">
+            <p class="logo-label">Sample logos</p>
+            <input class="logo-pause" id="logo-pause" type="checkbox" aria-label="Pause logo animation">
+            <label class="logo-toggle" for="logo-pause"><span aria-hidden="true"></span></label>
+            <div class="logo-window">
+              <div class="logo-track">
+                <ul class="logo-group">
+                  <li><span class="logo-symbol logo-symbol--stack" aria-hidden="true"></span>Slateform</li>
+                  <li><span class="logo-symbol logo-symbol--peak" aria-hidden="true"></span>Northline</li>
+                  <li><span class="logo-symbol logo-symbol--grid" aria-hidden="true"></span>Buildmark</li>
+                  <li><span class="logo-symbol logo-symbol--ring" aria-hidden="true"></span>Arcworks</li>
+                  <li><span class="logo-symbol logo-symbol--spire" aria-hidden="true"></span>Rooflab</li>
+                </ul>
+                <ul class="logo-group logo-group--repeat" aria-hidden="true">
+                  <li><span class="logo-symbol logo-symbol--stack" aria-hidden="true"></span>Slateform</li>
+                  <li><span class="logo-symbol logo-symbol--peak" aria-hidden="true"></span>Northline</li>
+                  <li><span class="logo-symbol logo-symbol--grid" aria-hidden="true"></span>Buildmark</li>
+                  <li><span class="logo-symbol logo-symbol--ring" aria-hidden="true"></span>Arcworks</li>
+                  <li><span class="logo-symbol logo-symbol--spire" aria-hidden="true"></span>Rooflab</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <div class="services shell" id="services" role="region" aria-label="Services overview" tabindex="-1">
+        <article class="service" id="roofing" tabindex="-1">
+          <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="m3 17 13-10 13 10M7 17l9-7 9 7M8 19v6h16v-6M22 11V7h4v7"/></svg>
+          <div><h2>Pitched roofing</h2><p>New roofs, repairs and replacements</p></div>
+        </article>
+        <article class="service" id="flat-roofing" tabindex="-1">
+          <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M4 10h24v5H4zM7 19v6h18v-6M13 25v-6h6v6"/></svg>
+          <div><h2>Flat roofing</h2><p>Installations and repairs</p></div>
+        </article>
+        <article class="service" id="construction" tabindex="-1">
+          <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M5 25V11l10-5 10 5v14H5Zm20 0h4V16h-4M11 25v-8h8v8M13 12h4"/></svg>
+          <div><h2>Construction</h2><p>Extensions and renovations</p></div>
+        </article>
+      </div>
     </main>
   </div>
 </body>
