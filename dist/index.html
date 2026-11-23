@@ -10,48 +10,69 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header shell">
-    <a class="brand" href="./" aria-label="Ridge and Acre home">
-      <img src="mark.svg" alt="" width="43" height="43">
-      <span>Ridge <span class="amp">&amp;</span> Acre
-        <small>Roofing &amp; construction</small>
-      </span>
-    </a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="#roofing">Roofing</a>
-      <a href="#flat-roofing">Flat roofing</a>
-      <a href="#construction">Construction</a>
-    </nav>
-  </header>
+  <div class="opening" id="home">
+    <img class="backdrop" src="standing-seam-home.webp" alt="" fetchpriority="high">
+    <header class="site-header shell">
+      <a class="brand" href="#home">
+        <img src="mark.svg" alt="" width="34" height="34">
+        Ridge &amp; Acre
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#home" aria-current="page">Home</a>
+        <a href="#roofing">Roofing</a>
+        <a href="#flat-roofing">Flat roofing</a>
+        <a href="#construction">Construction</a>
+      </nav>
+      <a class="pill-button header-button" href="#project">
+        Plan your project <span class="button-icon" aria-hidden="true"></span>
+      </a>
+    </header>
 
-  <main class="shell" id="main">
-    <section class="opening" aria-labelledby="hero-title">
-      <div class="hero">
-        <img class="hero-image" src="slate-roof-home.webp" alt="" fetchpriority="high">
-        <div class="hero-content">
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-panel">
           <p class="eyebrow">UK roofing &amp; construction</p>
-          <h1 id="hero-title">Roofing and<br class="desktop-break"> building for<br class="desktop-break"> <em>British homes.</em></h1>
-          <p class="intro">From a leaking roof to a new extension, find the right service for your home.</p>
-          <a class="primary-link" href="#services">Explore our services</a>
+          <h1 id="hero-title">Smart roofing for<br class="desktop-break"> modern homes.</h1>
+          <p class="intro">From roof repairs and replacements to home extensions, find the right service for your home.</p>
+          <a class="pill-button" href="#services">
+            Explore our services <span class="button-icon" aria-hidden="true"></span>
+          </a>
         </div>
+        <div class="roof-annotation">
+          <span class="roof-point" aria-hidden="true"></span>
+          <span class="roof-label">Standing-seam roof</span>
+        </div>
+        <span class="roof-point roof-point-secondary" aria-hidden="true"></span>
         <p class="image-note">Illustrative property</p>
-      </div>
 
-      <div class="services" id="services" aria-label="Services overview">
-        <article class="service" id="roofing" tabindex="-1">
-          <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="m3 17 13-10 13 10M7 17l9-7 9 7M8 19v6h16v-6M22 11V7h4v7"/></svg>
-          <div><h2>Pitched roofing</h2><p>New roofs, repairs and replacements</p></div>
-        </article>
-        <article class="service" id="flat-roofing" tabindex="-1">
-          <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M4 10h24v5H4zM7 19v6h18v-6M13 25v-6h6v6"/></svg>
-          <div><h2>Flat roofing</h2><p>Flat roof installations and repairs</p></div>
-        </article>
-        <article class="service" id="construction" tabindex="-1">
-          <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M5 25V11l10-5 10 5v14H5Zm20 0h4V16h-4M11 25v-8h8v8M13 12h4"/></svg>
-          <div><h2>Construction</h2><p>Home extensions and renovations</p></div>
-        </article>
-      </div>
-    </section>
-  </main>
+        <div class="hero-bottom">
+          <section class="project-card" id="project" aria-labelledby="project-title" tabindex="-1">
+            <h2 id="project-title">What are you planning?</h2>
+            <p>Choose a service for your home.</p>
+            <div class="project-links">
+              <a href="#roofing"><img src="pitched-roofing.webp" alt="" width="76" height="64">Pitched roofing</a>
+              <a href="#flat-roofing"><img src="flat-roofing.webp" alt="" width="76" height="64">Flat roofing</a>
+              <a href="#construction"><img src="construction.webp" alt="" width="76" height="64">Construction</a>
+            </div>
+          </section>
+
+          <div class="services" id="services" role="region" aria-label="Services overview" tabindex="-1">
+            <article class="service" id="roofing" tabindex="-1">
+              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="m3 17 13-10 13 10M7 17l9-7 9 7M8 19v6h16v-6M22 11V7h4v7"/></svg>
+              <div><h2>Pitched roofing</h2><p>New roofs, repairs and replacements</p></div>
+            </article>
+            <article class="service" id="flat-roofing" tabindex="-1">
+              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M4 10h24v5H4zM7 19v6h18v-6M13 25v-6h6v6"/></svg>
+              <div><h2>Flat roofing</h2><p>Installations and repairs</p></div>
+            </article>
+            <article class="service" id="construction" tabindex="-1">
+              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"><path d="M5 25V11l10-5 10 5v14H5Zm20 0h4V16h-4M11 25v-8h8v8M13 12h4"/></svg>
+              <div><h2>Construction</h2><p>Extensions and renovations</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
