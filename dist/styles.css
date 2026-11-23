@@ -479,7 +479,7 @@ h1 {
 .logo-track {
   display: flex;
   width: max-content;
-  animation: slide-logos 27s linear infinite;
+  animation: scroll-strip 27s linear infinite;
 }
 
 .logo-group {
@@ -518,15 +518,16 @@ h1 {
 .logo-symbol--ring { border: .22rem solid currentColor; border-radius: 50%; background: transparent; }
 .logo-symbol--spire { clip-path: polygon(16% 100%, 43% 0, 61% 0, 34% 100%, 51% 100%, 78% 22%, 94% 22%, 69% 100%); }
 
-.logo-pause {
+.scroll-pause {
   position: absolute;
   width: 1px;
   height: 1px;
   clip-path: inset(50%);
 }
 
-.logo-toggle {
-  grid-area: 1 / 3;
+.logo-slider .scroll-toggle { grid-area: 1 / 3; }
+
+.scroll-toggle {
   display: grid;
   place-items: center;
   width: 2.75rem;
@@ -537,38 +538,38 @@ h1 {
   cursor: pointer;
 }
 
-.logo-toggle:hover { background: #eef1ff; }
+.scroll-toggle:hover { background: #eef1ff; }
 
-.logo-toggle span {
+.scroll-toggle span {
   width: .65rem;
   height: .7rem;
   border-inline: .16rem solid currentColor;
 }
 
-.logo-pause:checked + .logo-toggle span {
+.scroll-pause:checked + .scroll-toggle span {
   border: 0;
   background: currentColor;
   clip-path: polygon(12% 0, 100% 50%, 12% 100%);
 }
 
-.logo-pause:focus-visible + .logo-toggle {
+.scroll-pause:focus-visible + .scroll-toggle {
   outline: 2px solid var(--blue);
   outline-offset: 3px;
 }
 
-.logo-pause:checked ~ .logo-window .logo-track,
+.scroll-pause:checked ~ .logo-window .logo-track,
 .logo-window:hover .logo-track {
   animation-play-state: paused;
 }
 
-@keyframes slide-logos {
+@keyframes scroll-strip {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-pause,
-  .logo-toggle,
+  .scroll-pause,
+  .scroll-toggle,
   .logo-group--repeat { display: none; }
 
   .logo-window { mask-image: none; }
@@ -1133,4 +1134,84 @@ h1 {
   .about-details { grid-template-columns: minmax(0, 1fr); }
   .about-tour { min-height: 14rem; }
   .about-tour img { object-position: center 57%; }
+}
+
+.construction-strip {
+  position: relative;
+  container-type: inline-size;
+  background: #fff;
+  color: #d9d9d9;
+}
+
+.construction-strip-window {
+  overflow: hidden;
+  padding-block: .7rem 1rem;
+}
+
+.construction-strip-track {
+  display: flex;
+  width: max-content;
+  font-size: clamp(3.25rem, 6.4vw, 10rem);
+  animation: scroll-strip 30s linear infinite;
+}
+
+.construction-strip-copy {
+  display: flex;
+  flex: none;
+  align-items: baseline;
+  justify-content: space-between;
+  min-width: 100cqw;
+  gap: .32em;
+  padding-inline: .32em;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: .012em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@supports (-webkit-text-stroke: 1px currentColor) {
+  .construction-strip-copy > span:not(.construction-strip-dot) {
+    -webkit-text-stroke: 1.5px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.construction-strip-dot {
+  flex: none;
+  width: .195em;
+  aspect-ratio: 1;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+.construction-strip .scroll-toggle {
+  position: absolute;
+  inset: auto 1rem .25rem auto;
+  z-index: 1;
+  background: rgb(255 255 255 / 94%);
+}
+
+.construction-strip .scroll-toggle:hover { background: #eef1ff; }
+
+.construction-strip .scroll-pause:checked ~ .construction-strip-window .construction-strip-track,
+.construction-strip-window:hover .construction-strip-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .construction-strip-repeat { display: none; }
+
+  .construction-strip-track {
+    width: auto;
+    font-size: clamp(1.15rem, 6vw, 10rem);
+    animation: none;
+  }
+
+  .construction-strip-copy {
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 0;
+    width: 100%;
+  }
 }
