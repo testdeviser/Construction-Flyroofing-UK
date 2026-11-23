@@ -12,21 +12,59 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="opening" id="home">
     <img class="backdrop" src="standing-seam-home.webp" alt="" fetchpriority="high">
-    <header class="site-header shell">
-      <a class="brand" href="#home" aria-label="Home">
-        <img src="mark.svg" alt="" width="34" height="34">
-        Your Logo
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="#home" aria-current="page">Home</a>
+    <header class="site-header">
+      <div class="header-layout shell">
+        <a class="brand" href="#home" aria-label="Home">
+          <img src="mark.svg" alt="" width="52" height="52">
+          <span>Your Logo <small>Construction</small></span>
+        </a>
+
+        <div class="header-panel">
+          <nav class="site-nav" aria-label="Main navigation">
+            <a href="#home" aria-current="page">Home</a>
+            <a href="#about">About Us</a>
+            <button type="button" popovertarget="services-menu">Our Services<span class="nav-chevron" aria-hidden="true"></span></button>
+            <span role="link" aria-disabled="true">Blog</span>
+            <a href="#project-enquiry">Contact Us</a>
+          </nav>
+          <a class="header-enquiry" href="#project-enquiry">
+            <span class="header-enquiry-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 3H4.8C3.8 3 3 3.8 3 4.8 3 13.8 10.2 21 19.2 21c1 0 1.8-.8 1.8-1.8V17l-5-2-1.5 2.2a13.8 13.8 0 0 1-7.7-7.7L9 8 7 3Z"/><path d="M14 4a7 7 0 0 1 6 6m-6-2a3 3 0 0 1 2 2"/></svg>
+            </span>
+            <span><small>Project enquiries</small><strong>Plan your project</strong></span>
+          </a>
+        </div>
+
+        <div class="header-tools">
+          <a class="header-tool" href="#site-sections" aria-label="Find a section">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg>
+          </a>
+          <a class="header-tool" href="#compact-menu" aria-label="Open navigation menu">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h17M8 12h13M3 19h17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="header-shortcuts" id="site-sections" aria-labelledby="site-sections-title" tabindex="-1">
+        <div class="header-shortcuts-title">
+          <h2 id="site-sections-title">Find a section</h2>
+          <a href="#home">Close</a>
+        </div>
+        <a href="#about">About our company</a>
+        <button type="button" popovertarget="services-menu">Roofing and construction services</button>
+        <a href="#project-enquiry">Project enquiries</a>
+      </nav>
+      <nav class="header-shortcuts" id="compact-menu" aria-labelledby="compact-menu-title" tabindex="-1">
+        <div class="header-shortcuts-title">
+          <h2 id="compact-menu-title">Menu</h2>
+          <a href="#home">Close</a>
+        </div>
+        <a href="#home">Home</a>
         <a href="#about">About Us</a>
         <button type="button" popovertarget="services-menu">Our Services</button>
         <span role="link" aria-disabled="true">Blog</span>
         <a href="#project-enquiry">Contact Us</a>
       </nav>
-      <a class="pill-button header-button" href="#project-enquiry">
-        Plan your project <span class="button-icon" aria-hidden="true"></span>
-      </a>
     </header>
 
     <main id="main">
