@@ -1355,3 +1355,78 @@ h1 {
     aspect-ratio: 1.45;
   }
 }
+
+.contact-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-inline: clamp(.4rem, 1.05vw, 1.25rem) solid var(--orange);
+}
+
+.contact-strip-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.75rem, 1vw, 1.2rem);
+  min-width: 0;
+  min-height: clamp(9rem, 10.35vw, 12.25rem);
+  padding: clamp(1rem, 2.1vw, 2.25rem);
+  background-color: #191919;
+  background-image: linear-gradient(110deg, rgb(0 0 0 / 30%), transparent 55%),
+    radial-gradient(ellipse, #121212 16%, #202020 34%, transparent 42%);
+  background-size: auto, 1rem .9rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-strip-highlight {
+  background: #c84200;
+}
+
+.contact-strip-icon {
+  flex: none;
+  width: clamp(2.3rem, 3.25vw, 3.85rem);
+  height: auto;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-strip-label {
+  display: block;
+  margin-bottom: .55rem;
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.contact-strip strong {
+  display: block;
+  font-size: clamp(1.25rem, 1.65vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+
+.contact-strip-panel:hover strong {
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+
+.contact-strip-panel:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -5px;
+}
+
+@media (max-width: 45rem) {
+  .contact-strip { grid-template-columns: 1fr; }
+
+  .contact-strip-panel {
+    min-height: 6.5rem;
+    justify-content: flex-start;
+    padding-inline: clamp(1.25rem, 7vw, 3rem);
+  }
+
+  .contact-strip-icon { width: 2.65rem; }
+}
