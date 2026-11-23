@@ -1188,7 +1188,6 @@ h1 {
 }
 
 .services-section {
-  --service-accent: #ffd200;
   width: min(92%, 81.25rem);
   margin-inline: auto;
   padding-block: clamp(3rem, 4.1vw, 4.75rem);
@@ -1276,7 +1275,7 @@ h1 {
   display: block;
   width: 3rem;
   height: 3rem;
-  color: var(--service-accent);
+  color: var(--orange);
   stroke: currentColor;
   stroke-width: 1.7;
   stroke-linecap: round;
@@ -1294,12 +1293,12 @@ h1 {
 .service-card-link {
   min-height: 3.55rem;
   padding: .65rem 1.75rem;
-  background: var(--service-accent);
+  background: var(--orange);
   color: #1b180f;
   font-size: 1rem;
 }
 
-.service-card-link:hover { background: #ffe04d; }
+.service-card-link:hover { background: #ff8247; }
 
 .service-card-link:focus-visible { outline-color: #fff; }
 
