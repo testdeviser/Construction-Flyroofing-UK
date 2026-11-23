@@ -44,6 +44,49 @@ p, h1, h2 { margin: 0; }
 
 .skip-link:focus { transform: none; }
 
+.contact-bar {
+  background: #ffd200;
+  color: #1b180f;
+  font-size: .875rem;
+  line-height: 1.35;
+}
+
+.contact-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .25rem 1rem;
+  width: 94%;
+  min-height: 2.1875rem;
+  margin-inline: auto;
+  padding-block: .35rem;
+}
+
+.contact-bar p,
+.contact-bar-enquiry {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.contact-bar a { text-underline-offset: .13em; }
+.contact-bar-enquiry { text-decoration: none; }
+.contact-bar-enquiry:hover { text-decoration: underline; }
+
+.contact-bar-icon {
+  flex: none;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+@media (max-width: 28rem) {
+  .contact-bar-inner {
+    justify-content: center;
+    padding-block: .45rem;
+  }
+}
+
 .opening {
   --image-height: clamp(38rem, 60.25vw, 54rem);
   --header-height: clamp(4.75rem, 5.4vw, 6.125rem);
