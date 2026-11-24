@@ -38,7 +38,7 @@
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#home" aria-current="page">Home</a>
-        <span role="link" aria-disabled="true">Pages</span>
+        <a href="#about">About</a>
         <span role="link" aria-disabled="true">Projects</span>
         <a href="#services">Services</a>
         <span role="link" aria-disabled="true">Blogs</span>
@@ -165,6 +165,46 @@
         </button>
       </div>
     </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-banner">
+        <div class="about-heading">
+          <p class="about-label">About Ridge &amp; Acre</p>
+          <h2 id="about-title">Building More Than Structures <span>— We Build Trust That Lasts for Generations.</span></h2>
+        </div>
+        <img src="about-construction.webp" alt="Yellow tower crane beside a high-rise building under construction" width="1200" height="900" loading="lazy" decoding="async">
+      </div>
+
+      <div class="about-panel">
+        <fieldset class="about-purpose">
+          <legend class="visually-hidden">Choose what to read about Ridge &amp; Acre</legend>
+          <input class="visually-hidden" id="about-mission" name="about-purpose" type="radio" aria-controls="about-mission-copy" checked>
+          <label for="about-mission">Our Mission</label>
+          <input class="visually-hidden" id="about-vision" name="about-purpose" type="radio" aria-controls="about-vision-copy">
+          <label for="about-vision">Our Vision</label>
+          <p class="about-purpose-copy" id="about-mission-copy">We aim to deliver lasting roofing and building work with care, clear communication and attention to detail, so you know what to expect from the first conversation through to completion.</p>
+          <p class="about-purpose-copy" id="about-vision-copy">We want homes and commercial properties to stay safe, useful and well cared for, with repairs and improvements that serve the people who use them for years to come.</p>
+        </fieldset>
+
+        <div class="about-summary">
+          <p>Ridge &amp; Acre helps homeowners and businesses across the UK with roof repairs, replacements, extensions and property improvements. We help you understand your options and plan the work around how you use your property.</p>
+          <p>We consider what can be repaired, which materials suit the building and how each decision affects its upkeep over time.</p>
+          <button class="project-action about-action" type="button" popovertarget="about-panel">
+            <span class="project-action-label">More about us</span>
+            <span class="project-action-icon" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-panel" id="about-panel" popover role="dialog" aria-labelledby="about-panel-title">
+      <div class="quote-panel-top">
+        <h2 id="about-panel-title">How we work</h2>
+        <button type="button" popovertarget="about-panel" popovertargetaction="hide" autofocus>Close</button>
+      </div>
+      <p>We start by discussing the condition of your property and what you want to achieve. Together we can review the scope, materials and schedule before work begins.</p>
+      <button class="quote-email" type="button" popovertarget="quote-panel">Request a quote</button>
+    </div>
 
     <div class="quote-panel" id="design-build-panel" popover role="dialog" aria-labelledby="design-build-panel-title">
       <div class="quote-panel-top">

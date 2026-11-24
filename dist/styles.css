@@ -660,3 +660,160 @@ a.project-action { text-decoration: none; }
 @media (max-width: 38rem) {
   .service-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+.about-section {
+  padding-bottom: 1rem;
+  background: #050505;
+}
+
+.about-banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: clamp(35rem, 39vw, 50rem);
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+.about-banner::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: clamp(.65rem, 1vw, 1.2rem);
+  background: repeating-linear-gradient(132deg, #fff 0 .5rem, transparent .5rem 1.1rem);
+  content: "";
+  pointer-events: none;
+}
+
+.about-heading {
+  position: relative;
+  align-self: start;
+  padding: clamp(3.25rem, 7.2vw, 8.75rem) 2rem clamp(10rem, 16.5vw, 20rem) clamp(1.25rem, 7.55vw, 9.5rem);
+  color: #fff;
+}
+
+.about-label {
+  display: inline-block;
+  padding: .65rem 1.35rem;
+  border-left: .5rem solid var(--yellow);
+  background: #fff;
+  color: var(--ink);
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .105em;
+  text-transform: uppercase;
+}
+
+.about-heading h2 {
+  max-width: 39rem;
+  margin-top: clamp(1.2rem, 1.75vw, 2.1rem);
+  font-size: clamp(2rem, 2.46vw, 3.25rem);
+  line-height: 1.23;
+  letter-spacing: -.035em;
+}
+
+.about-heading h2 span { color: var(--yellow); }
+
+.about-banner img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(calc(100% - 2.5rem), 80.625rem);
+  margin: calc(-1 * clamp(9rem, 14.3vw, 17.25rem)) auto 0;
+  padding: clamp(1.5rem, 3.15vw, 3.75rem);
+  background: #fff;
+}
+
+.about-purpose {
+  min-inline-size: 0;
+  margin: 0;
+  padding: .55rem clamp(1rem, 3.25vw, 3.85rem) 0 0;
+  border: 0;
+}
+
+.about-purpose label {
+  display: inline-block;
+  margin: 0 .35rem .5rem 0;
+  padding: .65rem clamp(.85rem, 1.28vw, 1.5rem);
+  background: #e0e0e0;
+  color: var(--ink);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.about-purpose input:checked + label { background: var(--yellow); }
+.about-purpose input:focus-visible + label { outline: 3px solid #1160a0; outline-offset: 3px; }
+
+.about-purpose-copy {
+  display: none;
+  margin-top: clamp(1.05rem, 1.7vw, 2rem);
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.62;
+}
+
+#about-mission:checked ~ #about-mission-copy,
+#about-vision:checked ~ #about-vision-copy { display: block; }
+
+.about-summary {
+  padding-left: clamp(1rem, 3.25vw, 3.85rem);
+  border-left: 1px solid #ddd;
+  color: #595959;
+  line-height: 1.63;
+}
+
+.about-summary p + p { margin-top: 1.15rem; }
+
+.about-action {
+  margin-top: clamp(1.5rem, 2.65vw, 3.15rem);
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.about-action:hover { background: #ffe257; }
+.about-action .project-action-icon { background: var(--ink); color: #fff; }
+
+@media (max-width: 45rem) {
+  .about-section { padding-bottom: 1.25rem; }
+
+  .about-banner {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .about-heading { padding: 2.5rem 1.25rem 2rem; }
+
+  .about-banner img {
+    position: static;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-panel {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 1.25rem;
+  }
+
+  .about-purpose { padding: 0; }
+
+  .about-summary {
+    margin-top: 1.5rem;
+    padding: 1.5rem 0 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+  }
+}
