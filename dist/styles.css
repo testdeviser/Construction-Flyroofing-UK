@@ -817,3 +817,177 @@ a.project-action { text-decoration: none; }
     border-top: 1px solid #ddd;
   }
 }
+
+.values-section {
+  position: relative;
+  padding-bottom: clamp(2.25rem, 4.2vw, 5rem);
+  background: #fff;
+}
+
+.values-banner {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: clamp(12rem, 17vw, 22rem);
+  padding-top: 2.75rem;
+}
+
+.values-words {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.values-track {
+  display: flex;
+  width: max-content;
+  font-size: clamp(3.65rem, 4.75vw, 6rem);
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -.035em;
+  white-space: nowrap;
+  animation: banner-scroll 32s linear infinite;
+}
+
+.values-track > span { flex: none; padding-right: .55em; }
+.values-track b { color: #a3a3a3; }
+
+.values-toggle {
+  top: 1rem;
+  right: clamp(1rem, 2.15vw, 2.5rem);
+  background: var(--ink);
+}
+
+.values-section .banner-pause:focus-visible + .values-toggle { outline-color: #1160a0; }
+.banner-pause:checked ~ .values-words .values-track,
+.values-words:hover .values-track { animation-play-state: paused; }
+
+.values-hook {
+  position: absolute;
+  inset: 0 auto 0 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: clamp(4.2rem, 5.9vw, 7rem);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.values-hook::before {
+  position: absolute;
+  inset: 0 14% 71%;
+  background: linear-gradient(90deg,
+    #454545 0 2px, transparent 2px 16%, #454545 16% calc(16% + 2px),
+    transparent calc(16% + 2px) calc(84% - 2px), #454545 calc(84% - 2px) 84%,
+    transparent 84% calc(100% - 2px), #454545 calc(100% - 2px));
+  content: "";
+}
+
+.values-hook img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 77%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.85rem, 1.6vw, 1.9rem);
+  width: min(calc(100% - 2.5rem), 80.625rem);
+  margin-inline: auto;
+}
+
+.values-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: end;
+  aspect-ratio: 640 / 780;
+  overflow: hidden;
+  background: #333;
+}
+
+.values-card img,
+.values-card::after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.values-card img { z-index: -2; object-fit: cover; filter: grayscale(1); }
+
+.values-card::after {
+  z-index: -1;
+  background:
+    repeating-linear-gradient(131deg, #ffffff17 0 1px, transparent 1px 5px),
+    linear-gradient(#0003, #0004);
+  content: "";
+}
+
+.values-caption {
+  margin: clamp(.65rem, 1.08vw, 1.25rem);
+  text-align: center;
+}
+
+.values-icon {
+  display: grid;
+  place-items: center;
+  width: clamp(3.4rem, 4.85vw, 5.65rem);
+  aspect-ratio: .88;
+  margin: 0 auto;
+  padding-top: .55rem;
+  clip-path: polygon(50% 0, 100% 15%, 100% 100%, 0 100%, 0 15%);
+  background: var(--yellow);
+}
+
+.values-icon svg { width: 40%; }
+
+.values-caption h3 {
+  margin: 0;
+  padding: clamp(.8rem, 1.16vw, 1.35rem) .5rem;
+  background: #fff;
+  font-size: clamp(1rem, 1.32vw, 1.5rem);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+
+.values-to-top {
+  display: grid;
+  place-items: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  margin: 1rem max(1.25rem, 2.15vw) 0 auto;
+  border: 2px solid #ddd;
+  border-right-color: var(--yellow);
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+}
+
+.values-to-top:hover { background: #333; }
+
+@media (min-width: 91rem) {
+  .values-to-top {
+    position: absolute;
+    right: 0;
+    bottom: calc(clamp(2.25rem, 4.2vw, 5rem) + 1.75rem);
+  }
+}
+
+@media (max-width: 45rem), (prefers-reduced-motion: reduce) {
+  .values-banner { min-height: 11rem; padding: 2rem clamp(5.1rem, 12vw, 9rem) 2rem 1.25rem; }
+  .values-hook { inset-inline: auto 1.25rem; transform: none; }
+  .values-section .banner-pause, .values-toggle, .values-repeat { display: none; }
+  .values-track { display: block; width: auto; font-size: clamp(1.85rem, 5.8vw, 4.75rem); white-space: normal; animation: none; }
+  .values-track > span { padding: 0; }
+  .values-track b { color: #666; }
+}
+
+@media (max-width: 45rem) {
+  .values-grid { grid-template-columns: minmax(0, 1fr); max-width: 27rem; }
+  .values-caption h3 { font-size: 1.2rem; }
+}
