@@ -13,7 +13,7 @@
   --utility-height: 4.75rem;
   --nav-height: 5.7rem;
   --nav-overlap: calc(var(--nav-height) / 2);
-  --banner-reveal: 8rem;
+  --banner-reveal: 14rem;
   font-family: "DM Sans", Arial, sans-serif;
   color: var(--ink);
   background: #fff;
