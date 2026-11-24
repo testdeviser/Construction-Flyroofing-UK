@@ -40,7 +40,7 @@
         <a href="#home" aria-current="page">Home</a>
         <span role="link" aria-disabled="true">Pages</span>
         <span role="link" aria-disabled="true">Projects</span>
-        <span role="link" aria-disabled="true">Services</span>
+        <button type="button" popovertarget="services-panel">Services</button>
         <span role="link" aria-disabled="true">Blogs</span>
         <span role="link" aria-disabled="true">Shop</span>
       </nav>
@@ -82,6 +82,49 @@
         </div>
       </div>
     </section>
+
+    <section class="project-intro" id="project-intro" aria-labelledby="project-intro-title">
+      <div class="project-intro-heading">
+        <p class="project-intro-label">Solid work. Solid reputation.</p>
+        <h2 id="project-intro-title">
+          <span>Constructing</span>
+          <span>excellence with</span>
+          <span>every project</span>
+        </h2>
+      </div>
+
+      <div class="project-intro-art">
+        <img src="project-tower.webp" alt="" width="531" height="620" loading="lazy" decoding="async">
+      </div>
+
+      <div class="project-intro-content">
+        <p>From roof repairs to building work and property improvements, we help homeowners and businesses across the UK plan their projects and see them through.</p>
+        <div class="project-intro-actions">
+          <button class="project-action project-action-dark" type="button" popovertarget="services-panel">
+            <span class="project-action-label">View all services</span>
+            <span class="project-action-icon" aria-hidden="true">↗</span>
+          </button>
+          <button class="project-action project-action-light" type="button" popovertarget="quote-panel">
+            <span class="project-action-label">Get in touch</span>
+            <span class="project-action-icon" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="quote-panel" id="services-panel" popover role="dialog" aria-labelledby="services-panel-title">
+      <div class="quote-panel-top">
+        <h2 id="services-panel-title">Our services</h2>
+        <button type="button" popovertarget="services-panel" popovertargetaction="hide" autofocus>Close</button>
+      </div>
+      <ul class="project-service-list">
+        <li>Roofing services</li>
+        <li>Construction services</li>
+        <li>Home renovations</li>
+        <li>Property maintenance</li>
+      </ul>
+      <button class="quote-email" type="button" popovertarget="quote-panel">Request a quote</button>
+    </div>
   </main>
 </body>
 </html>
