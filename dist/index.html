@@ -40,7 +40,7 @@
         <a href="#home" aria-current="page">Home</a>
         <span role="link" aria-disabled="true">Pages</span>
         <span role="link" aria-disabled="true">Projects</span>
-        <button type="button" popovertarget="services-panel">Services</button>
+        <a href="#services">Services</a>
         <span role="link" aria-disabled="true">Blogs</span>
         <span role="link" aria-disabled="true">Shop</span>
       </nav>
@@ -100,10 +100,10 @@
       <div class="project-intro-content">
         <p>From roof repairs to building work and property improvements, we help homeowners and businesses across the UK plan their projects and see them through.</p>
         <div class="project-intro-actions">
-          <button class="project-action project-action-dark" type="button" popovertarget="services-panel">
+          <a class="project-action project-action-dark" href="#services">
             <span class="project-action-label">View all services</span>
             <span class="project-action-icon" aria-hidden="true">↗</span>
-          </button>
+          </a>
           <button class="project-action project-action-light" type="button" popovertarget="quote-panel">
             <span class="project-action-label">Get in touch</span>
             <span class="project-action-icon" aria-hidden="true">↗</span>
@@ -111,6 +111,87 @@
         </div>
       </div>
     </section>
+
+    <section class="services-section" id="services" aria-labelledby="services-title" tabindex="-1">
+      <div class="services-heading">
+        <p class="services-label">Our services</p>
+        <h2 id="services-title">What We Build, We Build Right</h2>
+        <p>From roof repairs to home extensions, find the building services you need to plan, repair and improve your property.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card" aria-labelledby="design-build-title">
+          <span class="service-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 52 52" fill="none"><path d="M7 8h38L7 46V8Zm7 7h17L14 32V15Zm6 22 20-20 5 5-20 20-7 2 2-7Zm13-13 5 5"/></svg>
+          </span>
+          <h3 id="design-build-title">Design &amp; Build</h3>
+          <p>Plan an extension, renovation or building project with a clear understanding of the scope, materials and next steps.</p>
+          <button class="service-read" type="button" popovertarget="design-build-panel" aria-label="Read more about Design &amp; Build">
+            Read more <span aria-hidden="true">→</span>
+          </button>
+          <img src="service-design-build.webp" alt="House model, hard hat and tools arranged on architectural plans" width="650" height="430" loading="lazy" decoding="async">
+        </article>
+
+        <article class="service-card" aria-labelledby="project-management-title">
+          <span class="service-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 52 52" fill="none"><path d="M6 36h40a3 3 0 0 1 0 6H6a3 3 0 0 1 0-6Zm4 0v-5a16 16 0 0 1 11-15m10 0a16 16 0 0 1 11 15v5M21 26V12h10v14m-15 4v-8m20 8v-8"/></svg>
+          </span>
+          <h3 id="project-management-title">Project Management</h3>
+          <p>Keep your build organised with a clear schedule, coordination between trades and updates as the work takes shape.</p>
+          <button class="service-read" type="button" popovertarget="project-management-panel" aria-label="Read more about Project Management">
+            Read more <span aria-hidden="true">→</span>
+          </button>
+          <img src="service-project-management.webp" alt="Construction team reviewing plans from above" width="650" height="430" loading="lazy" decoding="async">
+        </article>
+
+        <article class="service-card" aria-labelledby="roofing-repairs-title">
+          <span class="service-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 52 52" fill="none"><path d="m5 25 21-18 21 18M12 24v19h28V24M18 28h16m-13-6h10m-12 21v-9h14v9"/></svg>
+          </span>
+          <h3 id="roofing-repairs-title">Roofing &amp; Repairs</h3>
+          <p>Repair damaged roofs or plan a replacement, with practical options for pitched tiles, slate and flat roofing.</p>
+          <button class="service-read" type="button" popovertarget="roofing-repairs-panel" aria-label="Read more about Roofing &amp; Repairs">
+            Read more <span aria-hidden="true">→</span>
+          </button>
+          <img src="service-roofing-repairs.webp" alt="Roofer measuring a timber batten beside slate roof tiles" width="650" height="430" loading="lazy" decoding="async">
+        </article>
+      </div>
+
+      <div class="services-footer">
+        <p>Roofing, building and property improvements from Ridge &amp; Acre.</p>
+        <button class="project-action services-all" type="button" popovertarget="services-panel">
+          <span class="project-action-label">View all services</span>
+          <span class="project-action-icon" aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="quote-panel" id="design-build-panel" popover role="dialog" aria-labelledby="design-build-panel-title">
+      <div class="quote-panel-top">
+        <h2 id="design-build-panel-title">Design &amp; Build</h2>
+        <button type="button" popovertarget="design-build-panel" popovertargetaction="hide" autofocus>Close</button>
+      </div>
+      <p>Tell us what you want to build and what plans you already have. We can discuss the work involved, the materials to consider and how to organise the build.</p>
+      <button class="quote-email" type="button" popovertarget="quote-panel">Request a quote</button>
+    </div>
+
+    <div class="quote-panel" id="project-management-panel" popover role="dialog" aria-labelledby="project-management-panel-title">
+      <div class="quote-panel-top">
+        <h2 id="project-management-panel-title">Project Management</h2>
+        <button type="button" popovertarget="project-management-panel" popovertargetaction="hide" autofocus>Close</button>
+      </div>
+      <p>We help organise trades, materials and work on site. Before work starts, we can talk through access, scheduling and how we will keep you informed.</p>
+      <button class="quote-email" type="button" popovertarget="quote-panel">Request a quote</button>
+    </div>
+
+    <div class="quote-panel" id="roofing-repairs-panel" popover role="dialog" aria-labelledby="roofing-repairs-panel-title">
+      <div class="quote-panel-top">
+        <h2 id="roofing-repairs-panel-title">Roofing &amp; Repairs</h2>
+        <button type="button" popovertarget="roofing-repairs-panel" popovertargetaction="hide" autofocus>Close</button>
+      </div>
+      <p>Let us know whether you are dealing with a leak, damaged tiles or an ageing flat roof. We can discuss the roof type and the repair or replacement options.</p>
+      <button class="quote-email" type="button" popovertarget="quote-panel">Request a quote</button>
+    </div>
 
     <div class="quote-panel" id="services-panel" popover role="dialog" aria-labelledby="services-panel-title">
       <div class="quote-panel-top">
