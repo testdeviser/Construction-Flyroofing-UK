@@ -730,6 +730,7 @@ a.project-action { text-decoration: none; }
   margin: calc(-1 * clamp(9rem, 14.3vw, 17.25rem)) auto 0;
   padding: clamp(1.5rem, 3.15vw, 3.75rem);
   background: #fff;
+  border: 1px solid #E0E0E0;
 }
 
 .about-purpose {
