@@ -13,6 +13,7 @@
   --utility-height: 4.75rem;
   --nav-height: 5.7rem;
   --nav-overlap: calc(var(--nav-height) / 2);
+  --banner-reveal: 5rem;
   font-family: "DM Sans", Arial, sans-serif;
   color: var(--ink);
   background: #fff;
@@ -66,8 +67,7 @@ button { font: inherit; }
   font-size: clamp(.875rem, .9vw, 1rem);
 }
 
-.utility-item,
-.utility-language {
+.utility-item {
   display: inline-flex;
   align-items: center;
   gap: .65rem;
@@ -86,14 +86,6 @@ button { font: inherit; }
 }
 
 .utility-item svg { color: #0c0c0c; }
-
-.utility-language {
-  flex: none;
-  align-self: center;
-  font-weight: 600;
-}
-
-.utility-language > span { font-size: 1.2rem; }
 
 .quote-trigger,
 .quote-email {
@@ -177,12 +169,10 @@ button { font: inherit; }
 .nav-tools {
   display: flex;
   align-items: center;
-  gap: .7rem;
   padding-inline: .55rem clamp(.5rem, 2vw, 2.1rem);
 }
 
 .nav-tools button {
-  position: relative;
   display: grid;
   place-items: center;
   width: 2.7rem;
@@ -191,22 +181,6 @@ button { font: inherit; }
   border: 0;
   background: transparent;
   color: #e9e9e9;
-}
-
-.nav-tools button + button { border-left: 1px solid #373737; }
-
-.cart-count {
-  position: absolute;
-  top: -.15rem;
-  right: -.1rem;
-  display: grid;
-  place-items: center;
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: #151515;
-  font-size: .73rem;
 }
 
 .home-tile {
@@ -223,7 +197,7 @@ button { font: inherit; }
 .banner {
   position: relative;
   isolation: isolate;
-  min-height: clamp(27rem, calc(100svh - var(--utility-height) - var(--nav-overlap)), 50rem);
+  min-height: clamp(19rem, calc(100svh - var(--utility-height) - var(--nav-overlap) - var(--banner-reveal)), 50rem);
   overflow: hidden;
   background: #5f8096;
 }
@@ -323,11 +297,11 @@ button { font: inherit; }
   :root { --header-inset: 3vw; }
   .utility { gap: .9rem; }
   .navigation { grid-template-columns: minmax(12rem, .27fr) minmax(0, 1fr) auto var(--nav-height); }
-  .nav-tools { gap: .15rem; padding-inline: .25rem .5rem; }
+  .nav-tools { padding-inline: .25rem .5rem; }
 }
 
 @media (max-width: 58rem) {
-  :root { --nav-height: 4.25rem; --nav-overlap: 1.15rem; }
+  :root { --nav-height: 4.25rem; --nav-overlap: 1.15rem; --banner-reveal: 7.5rem; }
   .navigation { grid-template-columns: minmax(0, 1fr) auto var(--nav-height); }
   .brand { grid-area: 1 / 1; min-height: var(--nav-height); }
   .nav-tools { grid-area: 1 / 2; }
@@ -339,12 +313,11 @@ button { font: inherit; }
   :root { --header-inset: 0rem; }
   .utility { flex-wrap: wrap; gap: 0; }
   .utility-info { flex-basis: 100%; gap: .4rem .85rem; padding: .65rem 1rem; }
-  .utility-language { flex: 1; padding-left: 1rem; }
-  .quote-trigger { min-width: 10.8rem; font-size: .83rem; }
+  .quote-trigger { min-width: 10.8rem; margin-inline-start: auto; font-size: .83rem; }
   .site-nav { justify-content: space-between; gap: .1rem .6rem; font-size: .78rem; }
   .brand img { width: 2.1rem; height: auto; }
   .nav-tools button { width: 2.25rem; }
-  .banner { min-height: clamp(26rem, 108vw, 36rem); }
+  .banner { min-height: clamp(14rem, calc(100svh - 17rem), 34rem); }
   .banner-image { object-position: 58% center; }
 }
 
