@@ -163,7 +163,7 @@ p, h1, h2 { margin: 0; }
   gap: clamp(.85rem, 1.95vw, 2.25rem);
   min-height: 3.25rem;
   font-size: clamp(.875rem, 1vw, 1rem);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .site-nav > * {
@@ -180,9 +180,9 @@ p, h1, h2 { margin: 0; }
 }
 
 .site-nav a:hover,
-.site-nav [aria-current] { color: #b83b08; }
+.site-nav [aria-current] { color: #fff; }
 
-.site-nav [aria-current] { border-bottom-color: var(--header-accent); }
+
 
 .site-nav [aria-disabled] { color: #66605b; }
 
