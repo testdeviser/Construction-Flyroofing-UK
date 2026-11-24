@@ -661,11 +661,6 @@ a.project-action { text-decoration: none; }
   .service-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
-.about-section {
-  padding-bottom: 1rem;
-  background: #050505;
-}
-
 .about-banner {
   position: relative;
   display: grid;
