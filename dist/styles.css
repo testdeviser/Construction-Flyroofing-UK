@@ -339,11 +339,12 @@ p, h1, h2 { margin: 0; }
 }
 
 .hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: calc(var(--image-height) - var(--header-height));
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(var(--image-height) - var(--header-height));
+    padding-top: 60px;
 }
 
 .hero-panel {
