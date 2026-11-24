@@ -224,7 +224,7 @@ button { font: inherit; }
 
 .banner-words {
   position: absolute;
-  bottom: -15px;
+  bottom: -15px !important;
   inset: auto 0 0;
   container-type: inline-size;
   overflow: hidden;
@@ -625,7 +625,7 @@ a.project-action { text-decoration: none; }
 }
 
 .services-footer p { font-size: clamp(1rem, 1.35vw, 1.13rem); font-weight: 600; }
-.services-all { background: var(--accent); color: var(--ink); }
+.services-all { background: var(--accent); color: var(--white); }
 .services-all:hover { background: var(--accent-hover); }
 .services-all .project-action-icon { background: var(--ink); color: #fff; }
 
@@ -752,7 +752,7 @@ a.project-action { text-decoration: none; }
 .about-action {
   margin-top: clamp(1.5rem, 2.65vw, 3.15rem);
   background: var(--accent);
-  color: var(--ink);
+  color: var(--white);
 }
 
 .about-action:hover { background: var(--accent-hover); }
