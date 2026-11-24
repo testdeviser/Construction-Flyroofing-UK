@@ -13,7 +13,7 @@
   --utility-height: 4.75rem;
   --nav-height: 5.7rem;
   --nav-overlap: calc(var(--nav-height) / 2);
-  --banner-reveal: 5rem;
+  --banner-reveal: 8rem;
   font-family: "DM Sans", Arial, sans-serif;
   color: var(--ink);
   background: #fff;
@@ -197,7 +197,7 @@ button { font: inherit; }
 .banner {
   position: relative;
   isolation: isolate;
-  min-height: clamp(19rem, calc(100svh - var(--utility-height) - var(--nav-overlap) - var(--banner-reveal)), 50rem);
+  min-height: clamp(19rem, calc(100svh - var(--utility-height) - var(--nav-overlap) - var(--banner-reveal)), 47rem);
   overflow: hidden;
   background: #5f8096;
 }
@@ -301,7 +301,7 @@ button { font: inherit; }
 }
 
 @media (max-width: 58rem) {
-  :root { --nav-height: 4.25rem; --nav-overlap: 1.15rem; --banner-reveal: 7.5rem; }
+  :root { --nav-height: 4.25rem; --nav-overlap: 1.15rem; --banner-reveal: 10.5rem; }
   .navigation { grid-template-columns: minmax(0, 1fr) auto var(--nav-height); }
   .brand { grid-area: 1 / 1; min-height: var(--nav-height); }
   .nav-tools { grid-area: 1 / 2; }
@@ -317,7 +317,7 @@ button { font: inherit; }
   .site-nav { justify-content: space-between; gap: .1rem .6rem; font-size: .78rem; }
   .brand img { width: 2.1rem; height: auto; }
   .nav-tools button { width: 2.25rem; }
-  .banner { min-height: clamp(14rem, calc(100svh - 17rem), 34rem); }
+  .banner { min-height: clamp(14rem, calc(100svh - 20rem), 31rem); }
   .banner-image { object-position: 58% center; }
 }
 
