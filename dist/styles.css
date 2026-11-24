@@ -212,7 +212,7 @@ button { font: inherit; }
   height: 100%;
 }
 
-.banner-image { z-index: -2; object-fit: cover; object-position: center 48%; }
+.banner-image { object-fit: cover; object-position: center 48%; }
 
 .banner::after {
   z-index: -1;
@@ -224,7 +224,7 @@ button { font: inherit; }
 
 .banner-words {
   position: absolute;
-  bottom: -15px !important;
+  bottom: -25px !important;
   inset: auto 0 0;
   container-type: inline-size;
   overflow: hidden;
@@ -371,7 +371,7 @@ button { font: inherit; }
 }
 
 .project-intro h2 {
-  font-size: clamp(2rem, 2.92vw, 3.75rem);
+  font-size: clamp(2rem, 4.35rem, 4.35rem);
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: -.025em;
@@ -649,15 +649,6 @@ a.project-action { text-decoration: none; }
   background-size: 4rem 4rem;
 }
 
-.about-banner::after {
-  position: absolute;
-  inset: auto 0 0;
-  height: clamp(.65rem, 1vw, 1.2rem);
-  background: repeating-linear-gradient(132deg, #fff 0 .5rem, transparent .5rem 1.1rem);
-  content: "";
-  pointer-events: none;
-}
-
 .about-heading {
   position: relative;
   align-self: start;
@@ -685,7 +676,7 @@ a.project-action { text-decoration: none; }
   letter-spacing: -.035em;
 }
 
-.about-heading h2 span { color: var(--accent); }
+.about-heading h2 span, .process-intro h2 span { color: var(--accent); }
 
 .about-banner img {
   position: absolute;
@@ -844,23 +835,12 @@ a.project-action { text-decoration: none; }
   pointer-events: none;
 }
 
-.values-hook::before {
-  position: absolute;
-  inset: 0 14% 71%;
-  background: linear-gradient(90deg,
-    #454545 0 2px, transparent 2px 16%, #454545 16% calc(16% + 2px),
-    transparent calc(16% + 2px) calc(84% - 2px), #454545 calc(84% - 2px) 84%,
-    transparent 84% calc(100% - 2px), #454545 calc(100% - 2px));
-  content: "";
-}
 
 .values-hook-art {
   position: relative;
   isolation: isolate;
   width: 100%;
-  height: 77%;
-  background: var(--accent);
-  mask: url("values-crane-hook.webp") center bottom / contain no-repeat;
+  height: 100%;
 }
 
 .values-hook-art img {
@@ -868,7 +848,6 @@ a.project-action { text-decoration: none; }
   width: 100%;
   height: 100%;
   mix-blend-mode: luminosity;
-  filter: grayscale(1);
   object-fit: contain;
   object-position: bottom;
 }
@@ -899,7 +878,7 @@ a.project-action { text-decoration: none; }
   height: 100%;
 }
 
-.values-card img { z-index: -2; object-fit: cover; filter: grayscale(1); }
+.values-card img { object-fit: cover; filter: grayscale(1); }
 
 .values-card::after {
   z-index: -1;
@@ -928,12 +907,14 @@ a.project-action { text-decoration: none; }
 .values-icon svg { width: 40%; }
 
 .values-caption h3 {
-  margin: 0;
-  padding: clamp(.8rem, 1.16vw, 1.35rem) .5rem;
-  background: #fff;
-  font-size: clamp(1rem, 1.32vw, 1.5rem);
-  line-height: 1.25;
-  letter-spacing: -.025em;
+    margin: 0;
+    padding: clamp(.8rem, 1.16vw, 1.35rem) .5rem;
+    background: #fff;
+    font-size: clamp(1rem, 1.32vw, 1.5rem);
+    line-height: 1.25;
+    letter-spacing: -.025em;
+    z-index: 1;
+    position: relative;
 }
 
 .values-to-top {
